@@ -1,0 +1,65 @@
+.backBtn {
+    border: 1px solid #674b2e;
+    background-color: #AA8668;
+    border-radius: 8px;
+    margin-left: 5px;
+    display:  inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 27px;
+    transition: background-color 0.1s ease;
+    font-size: 15px;
+    margin: 15px;
+    margin-top: 0;
+  }
+  
+.backBtn:hover {
+      background-color: #a8805f
+  }
+
+.movieData {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    padding-top: 20px;
+    font-size: 19px;
+    justify-content: center;
+  }
+
+.moviedata {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.movieDesc{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.titles{
+    font-weight: 600;
+}
+
+.button {
+    border: 1px solid #674b2e;
+    background-color: #AA8668;
+    border-radius: 8px;
+    margin-left: 5px;
+    display:  inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 34px;
+    transition: background-color 0.1s ease;
+    font-size: 16px;
+    margin: 10px;
+    font-weight: 600;
+}
+      
+.button:hover {
+    background-color: #a8805f;
+}

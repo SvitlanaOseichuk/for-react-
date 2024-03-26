@@ -1,0 +1,14 @@
+.container {
+    max-width: 1000px ;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    row-gap: 30px;
+}
+
+.castName{
+    padding: 8px 0;
+}
