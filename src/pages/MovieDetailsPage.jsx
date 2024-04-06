@@ -4,22 +4,30 @@ import { NavLink, Route, Routes, useLocation, useParams } from 'react-router-dom
 import { requestMoviesById } from '../Api';
 import MovieCast from '../components/MovieCast/MovieCast';
 import MovieReviews from '../components/MovieReviews/MovieReviews';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLoader, setmovieData } from '../redux/movieDetailsReducer';
+import Loader from '../components/Loader';
 
 
 
 const MovieDetailsPage = () => {
+  const movieData = useSelector((state) => state.movieDetails.movieData)
+  const loader = useSelector((state) => state.movieDetails.loader)
+  const dispatch = useDispatch();
   const { movieId } = useParams();
-  const [movieData, setMovieData] = useState(null);
   const location = useLocation();
   const backLinkHref = useRef(location.state ?? '/')
 
   useEffect(() => {
     async function fetchData() {
       try {
+        dispatch(setLoader(true))
         const movie = await requestMoviesById(movieId);
-        setMovieData(movie);
+        dispatch(setmovieData(movie));
       } catch (err) {
         console.error('Error fetching movie data:', err);
+      } finally{
+        dispatch(setLoader(false))
       }
     }
 
@@ -29,6 +37,8 @@ const MovieDetailsPage = () => {
 
   return (
     <main>
+      
+      {loader && <Loader />}
       
       <NavLink className={css.backBtn} to={backLinkHref.current} >Go back</NavLink>
 
